@@ -1,0 +1,149 @@
+﻿
+> vibe-coding-metricas-tcc@1.0.0 test
+> node --test
+
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '../../src/infrastructure/database/database'
+Require stack:
+- C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\http\app.test.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\http\app.test.js:4:22)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\tests\\http\\app.test.js'
+  ]
+}
+
+Node.js v24.14.1
+✖ tests\http\app.test.js (364.2136ms)
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '../../src/infrastructure/database/database'
+Require stack:
+- C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\integration\repository.test.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\integration\repository.test.js:3:22)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\tests\\integration\\repository.test.js'
+  ]
+}
+
+Node.js v24.14.1
+✖ tests\integration\repository.test.js (122.152ms)
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '../../src/domain/Appointment'
+Require stack:
+- C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\unit\appointment.test.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\unit\appointment.test.js:3:25)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\tests\\unit\\appointment.test.js'
+  ]
+}
+
+Node.js v24.14.1
+✖ tests\unit\appointment.test.js (127.058ms)
+✖ domain and application do not depend on delivery or persistence frameworks (1.6875ms)
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '../../src/domain/errors'
+Require stack:
+- C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\doubles\InMemoryAppointmentRepository.js
+- C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\unit\use-cases.test.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\doubles\InMemoryAppointmentRepository.js:1:38)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\tests\\doubles\\InMemoryAppointmentRepository.js',
+    'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\tests\\unit\\use-cases.test.js'
+  ]
+}
+
+Node.js v24.14.1
+✖ tests\unit\use-cases.test.js (124.5438ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 409.4673
+
+✖ failing tests:
+
+test at tests\http\app.test.js:1:1
+✖ tests\http\app.test.js (364.2136ms)
+  'test failed'
+
+test at tests\integration\repository.test.js:1:1
+✖ tests\integration\repository.test.js (122.152ms)
+  'test failed'
+
+test at tests\unit\appointment.test.js:1:1
+✖ tests\unit\appointment.test.js (127.058ms)
+  'test failed'
+
+test at tests\unit\architecture.test.js:15:1
+✖ domain and application do not depend on delivery or persistence frameworks (1.6875ms)
+  Error: ENOENT: no such file or directory, scandir 'C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\src\domain'
+      at Object.readdirSync (node:fs:1569:26)
+      at filesUnder (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\unit\architecture.test.js:9:13)
+      at TestContext.<anonymous> (C:\Users\Highlander\Documents\TCC-Arquitetura-IA\vibe-coding-metricas-tcc\tests\unit\architecture.test.js:17:8)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'scandir',
+    path: 'C:\\Users\\Highlander\\Documents\\TCC-Arquitetura-IA\\vibe-coding-metricas-tcc\\src\\domain'
+  }
+
+test at tests\unit\use-cases.test.js:1:1
+✖ tests\unit\use-cases.test.js (124.5438ms)
+  'test failed'
