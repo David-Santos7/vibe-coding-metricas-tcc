@@ -11,7 +11,8 @@
 - Branch: `master`
 - Baseline: `70fc7c8a81c870c62e93640cd4f09ebec89ee40f`
 - SHA de implementação validado: `1ab049bfb1fe767d632ba503e70324813c5e9dc7`.
-- Commits da execução: baseline `70fc7c8`, suíte RED `31b8b8a`, implementação `1ab049b`.
+- SHA do snapshot de evidências usado em M4: `302ed0aea7046337de57a3af5dcce524c2245226`.
+- Commits da execução: baseline `70fc7c8`, suíte RED `31b8b8a`, implementação `1ab049b`, evidências `302ed0a`.
 
 ## Ambiente
 
