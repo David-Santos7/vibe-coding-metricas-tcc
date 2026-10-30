@@ -1,0 +1,91 @@
+SHA=1ab049bfb1fe767d632ba503e70324813c5e9dc7
+COMMAND=npm run check
+STARTED_AT=2026-10-30T02:08:28.003Z
+EXIT_CODE=0
+
+
+> vibe-coding-metricas-tcc@1.0.0 check
+> npm run lint && npm run format:check && npm run test:coverage
+
+
+> vibe-coding-metricas-tcc@1.0.0 lint
+> eslint .
+
+
+> vibe-coding-metricas-tcc@1.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> vibe-coding-metricas-tcc@1.0.0 test:coverage
+> node --experimental-test-coverage --test --test-coverage-include="src/**/*.js"
+
+✔ renders the home, listing, and new appointment form (121.2639ms)
+✔ creates, views, edits, and deletes an appointment over HTTP (108.1223ms)
+✔ maps validation, conflict, and missing records to HTTP status codes (52.2678ms)
+✔ does not expose unexpected error details (15.8974ms)
+✔ adds security headers (14.2708ms)
+✔ persists, finds, orders, updates, and deletes appointments in SQLite (37.1718ms)
+✔ enforces unique appointment slots in the database (4.4433ms)
+✔ uses a parameterized repository contract for appointment lookup (3.721ms)
+✔ normalizes required text and optional notes (5.2114ms)
+✔ rejects a blank client name or service (1.323ms)
+✔ rejects impossible dates and dates outside YYYY-MM-DD (0.7899ms)
+✔ rejects invalid 24-hour times (0.7467ms)
+✔ limits optional notes to 500 characters (0.6498ms)
+✔ accepts historical appointments as valid records (2.7523ms)
+✔ domain and application do not depend on delivery or persistence frameworks (9.2469ms)
+✔ creates appointments with a UUID and ISO timestamps (7.8493ms)
+✔ rejects appointments in the past using the injected clock (1.9476ms)
+✔ rejects duplicate date and time (2.6193ms)
+✔ gets and lists persisted appointments (0.8372ms)
+✔ returns not found when getting an unknown appointment (0.5147ms)
+✔ updates an appointment without changing createdAt (0.8758ms)
+✔ rejects updating an appointment into the past (1.0352ms)
+✔ returns not found when updating an unknown appointment (0.7035ms)
+✔ allows keeping the current appointment time during update (1.4103ms)
+✔ rejects moving an appointment into another appointment's time (1.5492ms)
+✔ deletes appointments and reports missing records (0.7968ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1055.4129
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------------
+ℹ file                              | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------------
+ℹ src                               |        |          |         |
+ℹ  application                      |        |          |         |
+ℹ   CreateAppointment.js            |  95.83 |    87.50 |   66.67 | 18-19
+ℹ   DeleteAppointment.js            | 100.00 |   100.00 |  100.00 |
+ℹ   GetAppointment.js               | 100.00 |   100.00 |  100.00 |
+ℹ   isAppointmentInPast.js          |  93.75 |    83.33 |  100.00 | 13-14
+ℹ   ListAppointments.js             | 100.00 |   100.00 |  100.00 |
+ℹ   UpdateAppointment.js            |  96.30 |    91.67 |   66.67 | 23-24
+ℹ  domain                           |        |          |         |
+ℹ   Appointment.js                  |  96.08 |    91.67 |  100.00 | 56-57 78-79
+ℹ   errors.js                       | 100.00 |   100.00 |  100.00 |
+ℹ  infrastructure                   |        |          |         |
+ℹ   database                        |        |          |         |
+ℹ    database.js                    |  91.30 |    75.00 |  100.00 | 10-11
+ℹ   repositories                    |        |          |         |
+ℹ    SQLiteAppointmentRepository.js |  93.20 |    84.62 |  100.00 | 87-88 91-95
+ℹ  main                             |        |          |         |
+ℹ   app.js                          | 100.00 |   100.00 |   50.00 |
+ℹ   compositionRoot.js              | 100.00 |   100.00 |  100.00 |
+ℹ  presentation                     |        |          |         |
+ℹ   controllers                     |        |          |         |
+ℹ    appointmentController.js       | 100.00 |   100.00 |  100.00 |
+ℹ   middlewares                     |        |          |         |
+ℹ    errorHandler.js                |  93.55 |    87.50 |  100.00 | 9-10
+ℹ   routes                          |        |          |         |
+ℹ    appointmentRoutes.js           | 100.00 |   100.00 |  100.00 |
+ℹ ----------------------------------------------------------------------------------
+ℹ all files                         |  96.49 |    91.96 |   93.75 |
+ℹ ----------------------------------------------------------------------------------
+ℹ end of coverage report

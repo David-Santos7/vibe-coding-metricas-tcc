@@ -1,0 +1,14 @@
+SHA=1ab049bfb1fe767d632ba503e70324813c5e9dc7
+COMMAND=npm ci
+STARTED_AT=2026-10-30T02:08:14.625Z
+EXIT_CODE=0
+
+
+added 238 packages, and audited 239 packages in 13s
+
+75 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
