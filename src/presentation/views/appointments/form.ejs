@@ -1,0 +1,37 @@
+<%- include("../partials/header", { title: heading }) %>
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Agenda</p>
+    <h1><%= heading %></h1>
+  </div>
+</section>
+
+<form class="form-card" method="post" action="<%= action %>">
+  <div class="field">
+    <label for="clientName">Nome do cliente</label>
+    <input id="clientName" name="clientName" type="text" required value="<%= appointment.clientName || '' %>">
+  </div>
+  <div class="field">
+    <label for="service">Serviço</label>
+    <input id="service" name="service" type="text" required value="<%= appointment.service || '' %>">
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="appointmentDate">Data</label>
+      <input id="appointmentDate" name="appointmentDate" type="date" required value="<%= appointment.appointmentDate || '' %>">
+    </div>
+    <div class="field">
+      <label for="appointmentTime">Horário</label>
+      <input id="appointmentTime" name="appointmentTime" type="time" required value="<%= appointment.appointmentTime || '' %>">
+    </div>
+  </div>
+  <div class="field">
+    <label for="notes">Observações <span>(opcional, até 500 caracteres)</span></label>
+    <textarea id="notes" name="notes" rows="4" maxlength="500"><%= appointment.notes || '' %></textarea>
+  </div>
+  <div class="actions">
+    <button class="button" type="submit"><%= submitLabel %></button>
+    <a class="button button-secondary" href="/appointments">Cancelar</a>
+  </div>
+</form>
+<%- include("../partials/footer") %>

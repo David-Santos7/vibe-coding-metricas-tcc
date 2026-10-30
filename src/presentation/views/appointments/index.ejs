@@ -1,0 +1,30 @@
+<%- include("../partials/header", { title: "Agendamentos" }) %>
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Sua agenda</p>
+    <h1>Agendamentos</h1>
+  </div>
+  <a class="button" href="/appointments/new">Novo agendamento</a>
+</section>
+
+<% if (appointments.length === 0) { %>
+  <section class="empty-state">
+    <h2>Nenhum agendamento por enquanto</h2>
+    <p>Crie um agendamento para começar a organizar seus horários.</p>
+    <a href="/appointments/new">Criar primeiro agendamento</a>
+  </section>
+<% } else { %>
+  <div class="appointment-list">
+    <% appointments.forEach((appointment) => { %>
+      <article class="appointment-card">
+        <div>
+          <p class="appointment-date"><%= appointment.appointmentDate %> às <%= appointment.appointmentTime %></p>
+          <h2><a href="/appointments/<%= appointment.id %>"><%= appointment.clientName %></a></h2>
+          <p><%= appointment.service %></p>
+        </div>
+        <a class="text-link" href="/appointments/<%= appointment.id %>">Ver detalhes</a>
+      </article>
+    <% }) %>
+  </div>
+<% } %>
+<%- include("../partials/footer") %>

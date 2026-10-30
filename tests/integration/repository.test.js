@@ -27,7 +27,10 @@ test("persists, finds, orders, updates, and deletes appointments in SQLite", asy
     appointmentTime: "09:00",
   });
 
-  assert.equal((await repository.findById(appointment.id)).clientName, "Ana Silva");
+  assert.equal(
+    (await repository.findById(appointment.id)).clientName,
+    "Ana Silva",
+  );
   assert.deepEqual(
     (await repository.findAll()).map((item) => item.appointmentTime),
     ["09:00", "11:00"],
@@ -43,7 +46,10 @@ test("persists, finds, orders, updates, and deletes appointments in SQLite", asy
   );
 
   await repository.update({ ...appointment, clientName: "Beatriz" });
-  assert.equal((await repository.findById(appointment.id)).clientName, "Beatriz");
+  assert.equal(
+    (await repository.findById(appointment.id)).clientName,
+    "Beatriz",
+  );
   assert.equal(await repository.delete(appointment.id), true);
   assert.equal(await repository.findById(appointment.id), null);
 });

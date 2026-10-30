@@ -1,17 +1,16 @@
 # Execuções de testes
 
-## TDD — RED antes da implementação
+Cada tentativa observada está registrada. Quando o comando foi executado antes de um commit, o SHA exato não existe; a base era o commit RED `31b8b8af34c1fe5daad97fd5fcaa593a4a4a02d9` com alterações locais.
 
-- Execução: `TEST-A-001`
-- Horário observado no arquivo de log: `2026-10-29T22:59:13-03:00`
-- Comando: `npm test` (`node --test`)
-- SHA: NÃO DISPONÍVEL — testes e configuração ainda estavam no working tree; base `70fc7c8a81c870c62e93640cd4f09ebec89ee40f`.
-- Resultado: FAILURE esperado na fase RED.
-- Arquivos de teste descobertos: 5.
-- Testes aprovados: 0.
-- Testes reprovados: 5 arquivos; 4 não carregaram por ausência dos módulos de produção e o teste arquitetural falhou porque `src/domain` ainda não existia.
-- Ignorados: 0.
-- Duração reportada pelo runner: `409.4673 ms`.
-- Evidência: [log RED](./logs/tdd-red-before-implementation.log).
+| Execução     | Horário                         | Comando                 |              Testes |    Passaram |                   Falharam |   Ignorados | Duração do runner | Resultado/evidência                                                                                                         |
+| ------------ | ------------------------------- | ----------------------- | ------------------: | ----------: | -------------------------: | ----------: | ----------------: | --------------------------------------------------------------------------------------------------------------------------- |
+| `TEST-A-001` | `2026-10-29T22:59:13-03:00`     | `npm test`              | 5 arquivos de teste |           0 | 5 falhas de carga/execução |           0 |       409.4673 ms | RED intencional antes da implementação; [log](./logs/tdd-red-before-implementation.log)                                     |
+| `TEST-A-002` | NÃO DISPONÍVEL                  | `npm test`              |                  24 |          22 |                          2 |           0 |       888.7069 ms | Falha HTTP por parâmetros SQLite nomeados; saída observável na conversa                                                     |
+| `TEST-A-003` | `2026-10-29T23:01:53-03:00`     | `npm test`              |                  24 |          22 |                          2 |           0 |      1068.1232 ms | Reprodução capturada; [log](./logs/tdd-first-implementation-attempt.log)                                                    |
+| `TEST-A-004` | NÃO DISPONÍVEL                  | `npm test`              |                  24 |          24 |                          0 |           0 |       1161.267 ms | Primeira execução verde após correção; saída observável na conversa                                                         |
+| `TEST-A-005` | NÃO DISPONÍVEL                  | `npm run test:coverage` |                  24 |          24 |                          0 |           0 |      1458.0328 ms | Cobertura inicial: 95.81% linhas, 89.62% branches, 93.75% funções; saída observável na conversa                             |
+| `TEST-A-006` | NÃO DISPONÍVEL                  | `npm test`              |                  26 |          26 |                          0 |           0 |       1406.622 ms | Suíte ampliada após cobrir atualização passada e registro inexistente; saída observável na conversa                         |
+| `TEST-A-007` | `2026-10-29T23:05:36.145-03:00` | `npm run check`         |                  26 |          26 |                          0 |           0 |       940.4512 ms | ESLint e Prettier aprovados; 96.49% linhas, 91.96% branches, 93.75% funções. Working tree ainda sem commit de implementação |
+| `TEST-A-008` | A registrar                     | `npm run check`         |         A registrar | A registrar |                A registrar | A registrar |       A registrar | Validação final no SHA de implementação, após `npm ci`; saída observável e hash serão registrados antes do fechamento       |
 
-Esta execução registra a falha antes da implementação; ela não é contabilizada como teste funcional executado com sucesso.
+O runner RED conta os cinco arquivos que falharam ao carregar/executar; não são cinco testes funcionais aprovados. A cobertura não define limiar mínimo e só inclui módulos JavaScript instrumentados pelo runner.

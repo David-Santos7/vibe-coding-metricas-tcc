@@ -1,11 +1,17 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const InMemoryAppointmentRepository = require("../doubles/InMemoryAppointmentRepository");
-const { CreateAppointment } = require("../../src/application/CreateAppointment");
+const {
+  CreateAppointment,
+} = require("../../src/application/CreateAppointment");
 const { GetAppointment } = require("../../src/application/GetAppointment");
 const { ListAppointments } = require("../../src/application/ListAppointments");
-const { UpdateAppointment } = require("../../src/application/UpdateAppointment");
-const { DeleteAppointment } = require("../../src/application/DeleteAppointment");
+const {
+  UpdateAppointment,
+} = require("../../src/application/UpdateAppointment");
+const {
+  DeleteAppointment,
+} = require("../../src/application/DeleteAppointment");
 const {
   AppointmentConflictError,
   AppointmentNotFoundError,
@@ -99,7 +105,32 @@ test("updates an appointment without changing createdAt", async () => {
   assert.equal(updated.clientName, "Beatriz");
   assert.equal(updated.createdAt, created.createdAt);
   assert.equal(updated.updatedAt, fixedNow.toISOString());
-  assert.equal((await getAppointment.execute(created.id)).clientName, "Beatriz");
+  assert.equal(
+    (await getAppointment.execute(created.id)).clientName,
+    "Beatriz",
+  );
+});
+
+test("rejects updating an appointment into the past", async () => {
+  const { createAppointment, updateAppointment } = createContext();
+  const created = await createAppointment.execute(validInput);
+
+  await assert.rejects(
+    updateAppointment.execute(created.id, {
+      ...validInput,
+      appointmentTime: "09:59",
+    }),
+    ValidationError,
+  );
+});
+
+test("returns not found when updating an unknown appointment", async () => {
+  const { updateAppointment } = createContext();
+
+  await assert.rejects(
+    updateAppointment.execute("missing", validInput),
+    AppointmentNotFoundError,
+  );
 });
 
 test("allows keeping the current appointment time during update", async () => {

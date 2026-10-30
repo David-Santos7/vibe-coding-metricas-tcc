@@ -1,0 +1,2 @@
+session_id,run_id,scenario_id,started_at,finished_at,prompt_count,prompt_completeness,pauses,baseline_sha,final_sha,evidence,limitations
+ahp-session:/3ebe3f42-94a1-4fbe-870a-900875f666bd,A-20261029-01,A,2026-10-29T22:55:13.186-03:00,A registrar,1,PARCIAL,"Nenhuma pausa documentada",70fc7c8a81c870c62e93640cd4f09ebec89ee40f,A registrar,"ai-interaction-log.md; histórico desta sessão","Sem exportação independente completa; prompts contados somente no histórico observável"

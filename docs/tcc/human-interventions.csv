@@ -1,0 +1,2 @@
+intervention_id,run_id,session_id,timestamp,type,description,files_affected,git_reference,evidence,participant
+INT-A-001,A-20261029-01,ahp-session:/3ebe3f42-94a1-4fbe-870a-900875f666bd,2026-10-29T22:55:13.186-03:00,PROMPT,Pedido do pesquisador para implementar o sistema conforme o prompt central,NÃO APLICÁVEL,70fc7c8a81c870c62e93640cd4f09ebec89ee40f,Conversa desta sessão e prompt versionado,RESEARCHER

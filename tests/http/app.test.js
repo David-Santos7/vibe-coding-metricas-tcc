@@ -34,7 +34,10 @@ test("renders the home, listing, and new appointment form", async (t) => {
 
 test("creates, views, edits, and deletes an appointment over HTTP", async (t) => {
   const app = setup(t);
-  const created = await request(app).post("/appointments").type("form").send(validInput);
+  const created = await request(app)
+    .post("/appointments")
+    .type("form")
+    .send(validInput);
 
   assert.equal(created.status, 303);
   const id = created.headers.location.match(/\/appointments\/([^/]+)$/)[1];
@@ -51,10 +54,7 @@ test("creates, views, edits, and deletes an appointment over HTTP", async (t) =>
     .type("form")
     .send({ ...validInput, clientName: "Beatriz", appointmentTime: "12:00" });
   assert.equal(updated.status, 303);
-  assert.match(
-    (await request(app).get(`/appointments/${id}`)).text,
-    /Beatriz/,
-  );
+  assert.match((await request(app).get(`/appointments/${id}`)).text, /Beatriz/);
 
   const deleted = await request(app).post(`/appointments/${id}/delete`);
   assert.equal(deleted.status, 303);
@@ -78,6 +78,15 @@ test("maps validation, conflict, and missing records to HTTP status codes", asyn
   assert.equal(duplicate.status, 409);
 
   assert.equal((await request(app).get("/appointments/missing")).status, 404);
+  assert.equal(
+    (
+      await request(app)
+        .post("/appointments/missing/update")
+        .type("form")
+        .send(validInput)
+    ).status,
+    404,
+  );
 });
 
 test("does not expose unexpected error details", async (t) => {
@@ -88,10 +97,19 @@ test("does not expose unexpected error details", async (t) => {
       },
     },
   });
-  const response = await request(app).get("/appointments");
+  const loggedErrors = [];
+  const originalConsoleError = console.error;
+  console.error = (error) => loggedErrors.push(error);
+  let response;
+  try {
+    response = await request(app).get("/appointments");
+  } finally {
+    console.error = originalConsoleError;
+  }
 
   assert.equal(response.status, 500);
   assert.doesNotMatch(response.text, /private database detail|at Error/);
+  assert.equal(loggedErrors[0].message, "private database detail");
 });
 
 test("adds security headers", async (t) => {
