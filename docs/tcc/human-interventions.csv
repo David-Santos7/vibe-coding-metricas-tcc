@@ -1,2 +1,3 @@
 intervention_id,run_id,session_id,timestamp,type,description,files_affected,git_reference,evidence,participant
 INT-A-001,A-20261029-01,ahp-session:/3ebe3f42-94a1-4fbe-870a-900875f666bd,2026-10-29T22:55:13.186-03:00,PROMPT,Pedido do pesquisador para implementar o sistema conforme o prompt central,NÃO APLICÁVEL,70fc7c8a81c870c62e93640cd4f09ebec89ee40f,Conversa desta sessão e prompt versionado,RESEARCHER
+INT-A-002,A-20261104-01,NÃO DISPONÍVEL,2026-11-04T15:35:33.860-03:00,PROMPT,Pedido de validação posterior do CRUD conforme o prompt TDD,NÃO APLICÁVEL,a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa,Conversa desta sessão e vibe-coding-tdd.md,RESEARCHER

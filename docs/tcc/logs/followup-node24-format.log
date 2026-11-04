@@ -1,0 +1,10 @@
+node.exe : npm notice run vibe-coding-metricas-tcc@1.0.0 format:check
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "[REDACTED_PATH]\AppData\Roa ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ....0 format:check:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run prettier --check .
+Checking formatting...
+All matched files use Prettier code style!

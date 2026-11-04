@@ -1,12 +1,25 @@
 # Evidência de CI
 
-- Workflow: `.github/workflows/ci.yml`.
-- Jobs definidos: instalação com `npm ci`, lint, formatação e testes com cobertura nativa.
-- Repositório remoto: nenhum estava configurado na inspeção local.
-- Classificação do resultado: `NOT_EXECUTED`.
-- `repository`, `commit_sha` de uma execução, `run_id`, URL, data da execução remota, jobs concluídos e tentativas: NÃO DISPONÍVEL — não houve execução no GitHub Actions.
-- Evidência local distinta da CI: clone temporário do commit `1ab049bfb1fe767d632ba503e70324813c5e9dc7`; `npm ci` e `npm run check` concluíram com sucesso e o clone ficou sem alterações rastreadas.
+## Snapshot inicial
 
-A definição do workflow não é evidência de aprovação. A validação local e a reprodução em clone local estão registradas separadamente e não alteram a classificação da CI remota.
+Na redação original deste registro, não havia remote configurado e a classificação era `NOT_EXECUTED`. Essa observação histórica é mantida; a existência do workflow, por si só, não comprovava aprovação.
+
+## Execução remota verificada
+
+- Repositório: `David-Santos7/vibe-coding-metricas-tcc`.
+- Workflow: `CI` (`.github/workflows/ci.yml`).
+- Branch/evento: `main` / `push`.
+- Commit: `a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa`.
+- Run ID: `40992827465`; tentativa: `1`; classificação: `SUCCESS`.
+- URL: https://github.com/David-Santos7/vibe-coding-metricas-tcc/actions/runs/40992827465
+- Job `validate`: `SUCCESS`, em `ubuntu-latest`.
+- Passos concluídos: checkout, setup Node.js 24, `npm ci`, lint, formatação, testes com cobertura nativa e upload do log.
+- Início: `2026-10-30T02:38:06Z`; conclusão: `2026-10-30T02:38:26Z`.
+
+## Validação local posterior
+
+A validação deste registro foi feita no SHA `a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa`, sem alterações no código da aplicação. Node.js 26 inicialmente não pôde carregar o módulo nativo `better-sqlite3` compilado para Node.js 24; essa falha ambiental não foi classificada como defeito do CRUD nem como RED de TDD. Sob Node.js `v24.22.2`, `npm test`, `npm run test:coverage`, `npm run lint`, `npm run format:check` e `npm run check` passaram. Saídas: [tentativa incompatível](./logs/followup-node26-initial-attempt.log), [testes](./logs/followup-node24-test.log), [cobertura](./logs/followup-node24-coverage.log), [lint](./logs/followup-node24-lint.log), [formatação](./logs/followup-node24-format.log) e [check final](./logs/followup-node24-final-check.log).
+
+O histórico remoto e execuções posteriores podem ser consultados na página de Actions do repositório. A reprodução local não é classificada como CI.
 
 Não foi configurado hook Git local. Sem distribuição/ativação do hook e sem exportação de conversa, um hook não comprovaria prompts ou intervenções humanas e poderia produzir metadados incompletos.

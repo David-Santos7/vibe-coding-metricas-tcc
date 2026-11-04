@@ -1,0 +1,8 @@
+node.exe : npm notice run vibe-coding-metricas-tcc@1.0.0 lint
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "[REDACTED_PATH]\AppData\Roa ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...-tcc@1.0.0 lint:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run eslint .

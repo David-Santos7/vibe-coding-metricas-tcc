@@ -43,4 +43,4 @@ As regras temporais usam `America/Sao_Paulo`; os testes injetam um relógio fixo
 
 ## Histórico experimental
 
-O prompt e a evolução estão preservados em commits Git. Consulte [baseline e execução](docs/tcc/baseline.md), [eventos](docs/tcc/events.csv), [testes](docs/tcc/test-results.md) e [métricas](docs/tcc/metrics-summary.md). A CI está definida em `.github/workflows/ci.yml`; aprovação só será registrada após uma execução real no GitHub Actions.
+Os prompts e a evolução estão preservados em commits Git. Consulte [baseline e execução](docs/tcc/baseline.md), [eventos](docs/tcc/events.csv), [testes](docs/tcc/test-results.md), [validação TDD posterior](docs/tcc/tdd-validation.md) e [métricas](docs/tcc/metrics-summary.md). A CI está definida em `.github/workflows/ci.yml`; os resultados reais estão em [evidência de CI](docs/tcc/ci-evidence.md).

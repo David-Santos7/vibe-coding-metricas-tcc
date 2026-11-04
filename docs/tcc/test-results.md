@@ -15,3 +15,18 @@ Cada tentativa observada está registrada. Quando o comando foi executado antes 
 | `TEST-A-009` | `EVT-A-009` | `2026-10-29T23:08:28.003-03:00`  | `1ab049bfb1fe767d632ba503e70324813c5e9dc7` (clone limpo) | `npm run check`         |                  26 |       26 |                          0 |         0 |      1055.4129 ms | Resultado final; [log](./logs/final-check.log); `npm ci` e log da instalação em [evidência](./logs/clean-clone-install.log) |
 
 O runner RED conta os cinco arquivos que falharam ao carregar/executar; não são cinco testes funcionais aprovados. Para execuções anteriores sem captura temporal ou SHA do working tree, a indisponibilidade está explícita. A cobertura não define limiar mínimo e só inclui módulos JavaScript instrumentados pelo runner.
+
+## Validação posterior — `A-20261104-01`
+
+As execuções locais abaixo analisaram o código no SHA `a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa`; seus horários individuais não foram capturados.
+
+| Execução         | Comando/ambiente                         | Testes | Aprovados | Reprovados | Resultado/evidência                                                                                         |
+| ---------------- | ---------------------------------------- | -----: | --------: | ---------: | ----------------------------------------------------------------------------------------------------------- |
+| `TEST-A-FU-001`  | `npm test`, Node.js 26.13.0              |     26 |        18 |          8 | Falha ambiental: `better-sqlite3` ABI 137 versus ABI 147; [log](./logs/followup-node26-initial-attempt.log) |
+| `TEST-A-FU-002`  | `npm test`, Node.js 24.22.2              |     26 |        26 |          0 | PASS; [log](./logs/followup-node24-test.log)                                                                |
+| `TEST-A-FU-003`  | `npm run test:coverage`, Node.js 24.22.2 |     26 |        26 |          0 | PASS; linhas 96.49%, branches 91.96%, funções 93.75%; [log](./logs/followup-node24-coverage.log)            |
+| `CHECK-A-FU-001` | `npm run lint`, Node.js 24.22.2          |    N/A |       N/A |        N/A | PASS; [log](./logs/followup-node24-lint.log)                                                                |
+| `CHECK-A-FU-002` | `npm run format:check`, Node.js 24.22.2  |    N/A |       N/A |        N/A | PASS; [log](./logs/followup-node24-format.log)                                                              |
+| `CHECK-A-FU-003` | `npm run check`, Node.js 24.22.2         |     26 |        26 |          0 | PASS; lint, formatação e cobertura; [log](./logs/followup-node24-final-check.log)                           |
+
+A falha inicial ocorreu fora da faixa suportada pelo projeto e não demonstra RED funcional. Para o ciclo RED/GREEN histórico e sua evidência comportamental, consulte [tdd-validation.md](./tdd-validation.md).

@@ -1,0 +1,204 @@
+## main...origin/main
+a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa
+main
+a1a23d48ccf41f9a9c31b4ab30f9f27d829439fa
+2026-10-29
+finalizado
+npm notice run vibe-coding-metricas-tcc@1.0.0 test
+npm notice run node --test
+✖ renders the home, listing, and new appointment form (12.5319ms)
+✖ creates, views, edits, and deletes an appointment over HTTP (5.9084ms)
+✖ maps validation, conflict, and missing records to HTTP status codes (6.6398ms)
+✖ does not expose unexpected error details (8.002ms)
+✖ adds security headers (7.2329ms)
+✖ persists, finds, orders, updates, and deletes appointments in SQLite (71.5271ms)
+✖ enforces unique appointment slots in the database (6.5926ms)
+✖ uses a parameterized repository contract for appointment lookup (5.4046ms)
+✔ normalizes required text and optional notes (4.5293ms)
+✔ rejects a blank client name or service (1.1364ms)
+✔ rejects impossible dates and dates outside YYYY-MM-DD (0.4794ms)
+✔ rejects invalid 24-hour times (0.754ms)
+✔ limits optional notes to 500 characters (0.9225ms)
+✔ accepts historical appointments as valid records (0.4386ms)
+✔ domain and application do not depend on delivery or persistence frameworks (18.2888ms)
+✔ creates appointments with a UUID and ISO timestamps (10.4058ms)
+✔ rejects appointments in the past using the injected clock (0.8242ms)
+✔ rejects duplicate date and time (2.444ms)
+✔ gets and lists persisted appointments (0.8904ms)
+✔ returns not found when getting an unknown appointment (0.3713ms)
+✔ updates an appointment without changing createdAt (1.2156ms)
+✔ rejects updating an appointment into the past (0.4924ms)
+✔ returns not found when updating an unknown appointment (0.2449ms)
+✔ allows keeping the current appointment time during update (0.5533ms)
+✔ rejects moving an appointment into another appointment's time (0.8449ms)
+✔ deletes appointments and reports missing records (0.5383ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 18
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5344.8835
+
+✖ failing tests:
+
+test at tests\http\app.test.js:25:1
+✖ renders the home, listing, and new appointment form (12.5319ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at setup ([REDACTED_PATH]\tests\http\app.test.js:18:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\http\app.test.js:35:1
+✖ creates, views, edits, and deletes an appointment over HTTP (5.9084ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at setup ([REDACTED_PATH]\tests\http\app.test.js:18:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\http\app.test.js:64:1
+✖ maps validation, conflict, and missing records to HTTP status codes (6.6398ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at setup ([REDACTED_PATH]\tests\http\app.test.js:18:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\http\app.test.js:92:1
+✖ does not expose unexpected error details (8.002ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at setup ([REDACTED_PATH]\tests\http\app.test.js:18:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\http\app.test.js:115:1
+✖ adds security headers (7.2329ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at setup ([REDACTED_PATH]\tests\http\app.test.js:18:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\integration\repository.test.js:18:1
+✖ persists, finds, orders, updates, and deletes appointments in SQLite (71.5271ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at TestContext.<anonymous> ([REDACTED_PATH]\tests\integration\repository.test.js:19:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\integration\repository.test.js:57:1
+✖ enforces unique appointment slots in the database (6.5926ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at TestContext.<anonymous> ([REDACTED_PATH]\tests\integration\repository.test.js:58:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }
+
+test at tests\integration\repository.test.js:69:1
+✖ uses a parameterized repository contract for appointment lookup (5.4046ms)
+  Error: The module '\\?\[REDACTED_PATH]\node_modules\better-sqlite3\build\Release\better_sqlite3.node'
+  was compiled against a different Node.js version using
+  NODE_MODULE_VERSION 137. This version of Node.js requires
+  NODE_MODULE_VERSION 147. Please try re-compiling or re-installing
+  the module (for instance, using `npm rebuild` or `npm install`).
+      at Object..node (node:internal/modules/cjs/loader:2135:18)
+      at Module.load (node:internal/modules/cjs/loader:1690:32)
+      at Module._load (node:internal/modules/cjs/loader:1480:12)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+      at Module.require (node:internal/modules/cjs/loader:1713:12)
+      at require (node:internal/modules/helpers:318:16)
+      at bindings ([REDACTED_PATH]\node_modules\bindings\bindings.js:112:48)
+      at new Database ([REDACTED_PATH]\node_modules\better-sqlite3\lib\database.js:48:64)
+      at new Database ([REDACTED_PATH]\src\infrastructure\database\database.js:13:23)
+      at TestContext.<anonymous> ([REDACTED_PATH]\tests\integration\repository.test.js:70:20) {
+    code: 'ERR_DLOPEN_FAILED'
+  }

@@ -1,0 +1,42 @@
+node.exe : npm notice run vibe-coding-metricas-tcc@1.0.0 test
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "[REDACTED_PATH]\AppData\Roa ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...-tcc@1.0.0 test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run node --test
+✔ renders the home, listing, and new appointment form (266.1823ms)
+✔ creates, views, edits, and deletes an appointment over HTTP (420.8598ms)
+✔ maps validation, conflict, and missing records to HTTP status codes (35.6227ms)
+✔ does not expose unexpected error details (11.1686ms)
+✔ adds security headers (12.744ms)
+✔ persists, finds, orders, updates, and deletes appointments in SQLite (157.6825ms)
+✔ enforces unique appointment slots in the database (4.858ms)
+✔ uses a parameterized repository contract for appointment lookup (2.212ms)
+✔ normalizes required text and optional notes (5.7482ms)
+✔ rejects a blank client name or service (1.2492ms)
+✔ rejects impossible dates and dates outside YYYY-MM-DD (0.6851ms)
+✔ rejects invalid 24-hour times (0.5906ms)
+✔ limits optional notes to 500 characters (0.4684ms)
+✔ accepts historical appointments as valid records (0.4224ms)
+✔ domain and application do not depend on delivery or persistence frameworks (92.5784ms)
+✔ creates appointments with a UUID and ISO timestamps (7.7735ms)
+✔ rejects appointments in the past using the injected clock (1.7174ms)
+✔ rejects duplicate date and time (1.0718ms)
+✔ gets and lists persisted appointments (0.9084ms)
+✔ returns not found when getting an unknown appointment (0.5666ms)
+✔ updates an appointment without changing createdAt (1.2841ms)
+✔ rejects updating an appointment into the past (0.9054ms)
+✔ returns not found when updating an unknown appointment (0.5205ms)
+✔ allows keeping the current appointment time during update (0.9873ms)
+✔ rejects moving an appointment into another appointment's time (2.7011ms)
+✔ deletes appointments and reports missing records (2.066ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3819.3372
